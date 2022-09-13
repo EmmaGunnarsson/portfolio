@@ -1,0 +1,352 @@
+*{
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+    padding: 0;
+    font-family: Helvetica, serif;
+    line-height: 1.6em;
+    color: rgb(81, 92, 103);
+}
+.bigger { 
+    font-size:115%; 
+}
+.cvsmall{
+    font-size:80%; 
+}
+body {
+    min-height: 100%;
+    margin:0;
+    background-color: #f8fcf4;
+    color: darkgrey;
+}
+
+@font-face { 
+    font-family: PublicSans; src: url('PublicSans-SemiBold.otf'); 
+} 
+@font-face { 
+    font-family: PublicSans; font-weight: bold; src: url('PublicSans-SemiBold.otf');
+}
+
+a:link {
+    color: rgb(5, 5, 5);
+    text-decoration: none;
+}
+a:visited {
+    color: rgb(5, 5, 5);
+}
+a:hover {
+    color: rgb(5, 5, 5);
+}
+a:active {
+    color: black;
+}
+ 
+a:link.pages {
+    color: rgb(17, 161, 74);
+    text-decoration: none;
+}
+
+
+header{
+    width: 100%;
+    background-color: #93B8A0;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    overflow: hidden;
+}
+.aboutSection{
+    display: block;
+    width: 65%;
+}
+h1{
+    text-align: left;
+    color: black;
+    font-family: PublicSans, sans-serif;
+}
+h2{
+    text-align: left;
+    color: black;
+    font-family: PublicSans, sans-serif;
+
+}
+h3{
+    text-align: center;
+    color: black;
+    font-family: PublicSans-Regular, sans-serif;
+
+}
+h4{
+    text-align: right;
+    margin-left: auto;
+    margin-right: 25%;
+    color: black;
+
+}
+nav{
+    background-color: #528765;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+
+}
+
+
+.button{
+    width: 20%;
+    margin-bottom: 1.5%
+}
+.button2{
+    display: inline;
+    margin-left: 80%; 
+    margin-bottom: 1.5%;
+    width: 20%;
+}
+.readBtn{
+    width: 20%;
+}
+.btnSection{
+    display: flex;
+    justify-content: center;
+}
+
+.HeaderImage1{
+    display: inline;
+    margin-left: 11% ;
+    margin-right: auto;
+    width: 48%;
+}
+
+.HeaderImage2{
+    display: inline;
+    margin-left: 2%;
+    margin-top: 0%;
+    margin-right: 0% ;
+    margin-bottom: 0%;
+    width: 11%;
+}
+
+.container {
+    border-radius: 8px;
+    background-color: #e7f0e9;
+    padding: 15px;
+}
+
+.CVcontainer1 {
+    border-radius: 8px;
+    background-color: #e7f0e9;
+    padding: 9px;
+    width: 25%; 
+    margin-bottom: 2%;
+    margin-right: 2%;
+    min-width: 160px;
+}
+.CVcontainer2 {
+    border-radius: 8px;
+    background-color: #e7f0e9;
+    padding: 9px;
+    width: 65%; 
+    margin-bottom: 2%;
+    margin-left: 2%;
+    min-width: 230px;
+}
+.CVcontainerSTAPEL1 {
+    border-radius: 8px;
+    background-color: #f8fcf4;
+    width: 10%; 
+    margin-bottom: 0%;
+    margin-right: 0%;
+    min-width: 160px;
+}
+.CVcontainerSTAPEL2 {
+    border-radius: 8px;
+    background-color: #f8fcf4;
+    width: 75%; 
+    margin-bottom: 0.8%;
+    margin-left: 2%;
+    min-width: 230px;
+    padding: 1.5px;
+
+}
+.CVcontainerSTAPEL_fluent {
+    border-radius: 8px;
+    background-color: #69a377;
+    color: #69a377;
+    width: 100%;
+    height: 100%; 
+    position: relativ;
+}
+.CVcontainerSTAPEL_python {
+    border-radius: 8px;
+    background-color: #69a377;
+    color: #69a377;
+    width: 46%;
+    height: 100%; 
+    position: relativ;
+}
+.CVcontainerSTAPEL_sql {
+    border-radius: 8px;
+    background-color: #69a377;
+    color: #69a377;
+    width: 70%;
+    height: 100%; 
+    position: relativ;
+}
+.CVcontainerSTAPEL_tableau {
+    border-radius: 8px;
+    background-color: #69a377;
+    color: #69a377;
+    width: 30%;
+    height: 100%; 
+    position: relativ;
+}
+.CVcontainerSTAPEL_html {
+    border-radius: 8px;
+    background-color: #69a377;
+    color: #69a377;
+    width: 40%;
+    height: 100%; 
+    position: relativ;
+}
+.CVcontainerSTAPEL_french {
+    border-radius: 8px;
+    background-color: #69a377;
+    color: #69a377;
+    width: 60%;
+    height: 100%; 
+    position: relativ;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size:80%; 
+    
+    position: absolute; /* Position the tooltip text */
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+  
+    opacity: 0;         /* Fade in tooltip */
+    transition: opacity 0.3s;
+}
+.tooltip .tooltiptext::after {   /* Tooltip arrow */
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
+.logotype{
+    background-color: #93B8A0;
+    width: 25%;
+}
+.title{
+    margin: auto;
+    width: 70%;
+}
+.certDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+.cert{
+    display: block;
+    width: 45%;
+    margin: 1%;
+}
+
+.grow { 
+    transition: all .2s ease-in-out; 
+    } 
+.grow:hover { 
+    transform: scale(2.1); 
+    }
+ .growS { 
+    transition: all .2s ease-in-out; 
+    } 
+.growS:hover { 
+    transform: scale(1.1); 
+    }
+    
+.cvMain{
+    width: 100%;
+}
+.CV{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0%;
+    width: 50%;
+
+}
+
+
+.padding {
+padding: 5px 0px 5px 57px;
+}
+.paddingRight {
+    padding: 0px 0px 0px 25px;
+}
+.paddingLeft {
+    padding: 0px 25px 0px 0px;
+}
+.icons{
+    width: 10%;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    width: auto;
+    display: inline-block;
+    padding: 0.2%;
+    margin-left: 2%;
+    margin-right: 5%;
+}
+footer{
+    background-color: #93B8A0;
+    bottom:0;
+    position: fixed;
+    text-align: center;
+    height:4.6%;
+    width: 100%;
+    /*margin-left: auto;
+    margin-right: auto;
+    /*margin-top: -50px;*/
+    border-top: double;
+}
+.footerDiv{
+    margin-top: 0.2%;
+    width: 1.7%;
+}
+main{
+    background-color: #f8fcf4;
+    width: 50%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+} 
+
+
