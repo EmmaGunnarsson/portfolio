@@ -18,6 +18,18 @@ body {
     margin:0;
     background-color: #f8fcf4;
     color: darkgrey;
+    font-size: calc(0.7em + 0.7vw);
+}
+
+.responsiveIMG {
+    width: 100%;
+    height: auto;
+  }
+
+.responsiveIMG_max_width {
+    width: 100%;
+    height: auto;
+    max-width: 90%;
 }
 
 @font-face { 
@@ -92,6 +104,9 @@ nav{
 
 }
 
+p.narrow {
+    max-width: 1000px;
+  }
 
 .button{
     width: 20%;
@@ -110,7 +125,11 @@ nav{
     display: flex;
     justify-content: center;
 }
-
+.btnSection_margin{
+    display: flex;
+    justify-content: center;
+    width: 70%
+}
 .HeaderImage1{
     display: inline;
     margin-left: 11% ;
@@ -132,7 +151,12 @@ nav{
     background-color: #e7f0e9;
     padding: 15px;
 }
-
+.container_textbox {
+    border-radius: 8px;
+    background-color: #f8fcf4;
+    padding: 15px;
+    width: 90%;
+}
 .CVcontainer1 {
     border-radius: 8px;
     background-color: #e7f0e9;
@@ -315,6 +339,7 @@ padding: 5px 0px 5px 57px;
 .icons{
     width: 10%;
 }
+
 ul {
     list-style: none;
     padding: 0;
@@ -347,6 +372,8 @@ main{
     width: 50%;
     margin-top: 5%;
     margin-bottom: 10%;
+    max-width:  1050px
+
 } 
 
 
