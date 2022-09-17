@@ -150,7 +150,15 @@ nav{
     margin-bottom: 0%;
     width: 11%;
 }
-
+.footerImage {
+    display: inline;
+    margin-left: 2%;
+    margin-top: 0%;
+    margin-right: 0% ;
+    margin-bottom: 0%;
+    width: 11%;
+    min-width: 20px;
+}
 .container {
     border-radius: 8px;
     background-color: #e7f0e9;
