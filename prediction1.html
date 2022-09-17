@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Thea Gunnarsson">
+    <meta name="author" content="Emma and Thea Gunnarsson">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Emma Gunnarsson</title>
@@ -24,83 +24,81 @@
     </nav>
    
     <main>
-        <a href="case.html"><img class="growS" style="float: left;" height=24px src="icons/back3.png"></a>
+        <a href="case.html"><img class="growS icons" style="float: left;" height=24px src="icons/back3.png"></a>
         <br>
         <h2>Prediction</h2>
-        <p>Predictive modeling is used to forecast activity, behavior, and trends, by analyzing patterns in current or historical data. 
-            Based on what we do know, we make qualified guesses about the unknown. Naturally, this is useful in just about any setting. 
-            Prediction models are used in most software products to improve usability, for example through recommender systems, spam 
-            detection, or other automatic processes. It is also helpful in business decisions when we need to know things like future 
-            demand, churn rates, earnings, required maintenance, or detecting frauds.</p>
-        <p>Prediction is a wide and exciting field, and there are of course some things to keep in mind. Some
-            important bullet points include:</p>
+        <p>Predictive modeling is used to forecast activity, behavior, and trends by analyzing patterns in current or historical data. 
+            We make qualified guesses about the unknown based on what we know. Naturally, this is useful in just about any setting. 
+            Prediction models are used in most software products to improve usability, for example, through recommender systems, 
+            spam detection, or other automatic processes. It is also helpful in business decisions when we need to know things like 
+            future demand, churn rates, earnings, required maintenance, or detecting fraud.</p>
+        <p>Prediction is a vast and exciting field, and there are, of course, some things to keep in mind. Some important bullet 
+            points include:</p>
         <h5>Supervised or unsupervised machine learning?</h5>
-        <p>We usually talk about <i>supervised learning</i> and <i>unsupervised learning</i>. In supervised learning, the data is labeled. For 
-            example in a spam detection model, we have a bunch of emails that we know are spam or not spam. This means the data is 
-            labeled and we can build a supervised machine learning algorithm. In unsupervised learning on the other hand, the algorithm 
-            is trained using data that is unlabeled. Then, the algorithm tries to identify the hidden patterns and give a response, 
-            for example through clustering models. This could be useful in many settings, for example in recommender systems, or if we 
-            maybe wanna map clusters of hashtags in order to optimize our reach on social platforms. The main focus in the chapters 
-            below is supervised learning.</p>
+        <p>We usually talk about supervised learning and unsupervised learning. In supervised learning, the data is labeled. For 
+            example, in a spam detection model, we have a bunch of emails that we know are spam or not spam. This means the data is 
+            labeled, and we can build a supervised machine learning algorithm. In unsupervised learning, on the other hand, the 
+            algorithm is trained using data that is unlabeled. Then, the algorithm tries to identify the hidden patterns and give a 
+            response, for example, through clustering models. This could be useful in many settings, for instance, in recommender 
+            systems or if we maybe want to map hashtag clusters to optimize our reach on social platforms. The main focus in the 
+            chapters below is supervised learning.</p>
         <h5>Classification or Regression?</h5>
-        <p>In case of a categorical outcome, such as "spam" or "not spam", we need to build a classification model. If we on the other 
-            hand would like to predict a continuous variable, for example, future demand, a regression model is the good choice.</p>
+        <p>In case of a categorical outcome, such as "spam" or "not spam," we must build a classification model. On the other hand, 
+            a regression model is a good choice if we would like to predict a continuous variable, for example, future demand.</p>
         <h5>What predictors to use?</h5>
-        <p>We need to base our predictions on some known information. For example, we could base a prediction of tomorrow's weather on 
-            the weather today, or we could predict churn rates by using variables on customer demographics and behavior.</p>
-        <p>It really depends on the setting and data availability which variables are good to use. Here, domain knowledge is important. 
-            Also, we can have a look at the actual data to see if a specific variable might have any predictive power. The fastest way 
-            to do this is by graphical analysis, in the form of scatterplots, density plots or frequency plots.</p>
-        
+        <p>We need to base our predictions on some available information. For example, we could establish a forecast of tomorrow's 
+            weather on the weather today, or we could predict churn rates by using variables on customer demographics and behavior.</p>
+        <p>It really depends on the setting and data availability of which variables are suitable. Here, domain knowledge is essential. 
+            Also, we can look at the actual data to see if a specific variable might have any predictive power. The fastest way to do 
+            this is by graphical analysis using scatterplots, density plots, or frequency plots.</p>
         <h5>What machine learning algorithm to use?</h5>
-        <p>This topic is a bit technical; as it refers to the mathematical aspects of machine learning. However, the takeaway here 
-            really is that the choice of algorithm does matter for the performance of the model. Also, no algorithm is going to 
-            outperform in every given situation. Therefore, it is important to give this some thought.</p>
-        <p>First of all, the purpose of the analysis matters. There are for example some methods that might produce good predictions, 
-            but will not give us much information about the inputs. If we would like to predict for example default risk by some 
+        <p>This topic is a bit technical, as it refers to the mathematical aspects of machine learning. However, the takeaway is that 
+            the choice of algorithm does matter for the model's performance, and no algorithm will outperform in every given situation. 
+            Therefore, it is important to give this some thought.</p>
+        <p>First of all, the purpose of the analysis matters. There are, for example, some methods that might produce good predictions 
+            but will not give us much information about the inputs. If we would like to predict, for example, default risk by some 
             predictors, say salary and interest rate, these algorithms will not inform us whether it is salary or interest rate that 
-            is the most important predictor. If we on the other hand only are interested in the actual prediction, these methods could 
-            be powerful tools.</p>
-        <p>Other things to consider include things like the linearity of our data, the separation of our classes, or complexity of the 
-            relationship we are modeling. The various algorithms are designed to fit these situations to various degrees. Moreover, if 
-            we haven’t yet observed all outcomes before we need to make a decision based on our prediction, we might be best off turning 
-            to survival analysis.</p>
-       
+            is the most important predictor. If we, on the other hand, only are interested in the actual prediction, these methods 
+            could be powerful tools.</p>
+        <p>Other things to consider include the linearity of our data, the separation of our classes, or the complexity of the 
+            relationship we are modeling. The various algorithms are designed to fit these situations to multiple degrees. Moreover, 
+            if we haven't yet observed all outcomes before we need to make a decision based on our prediction, we might be best off 
+            turning to survival analysis.</p>
         <h5>How to evaluate the model?</h5>
         <p>In supervised learning, one evaluates the model by comparing the prediction against the true labels. By comparing the 
-            performance of several models, we can choose the best-performing one from which we are going to make conclusions. Naturally, 
-            this is not possible in unsupervised learning.</p>
+            performance of several models, we can choose the best-performing one from which we will conclude. Naturally, this is not 
+            possible in unsupervised learning.</p>
         <p>There are some useful metrics for evaluating a supervised machine. <i>Accuracy</i> is perhaps the most straightforward; the fraction 
             of predictions our model got right. There are some others as well. <i>The precision</i> is the proportion of positive 
             identifications that were actually correct. If the precision is 0.4, when our model predicts "spam", it's going to be 
             right 40% of the time. <i>The recall</i> describes the proportion of actual positives that were identified correctly. This means 
             a recall of 0.4 should be interpreted as our model being able to correctly identify 40% of all spam emails.</p>
         <h5>Is the data balanced or unbalanced?</h5>
-        <p>In reality, our data is often going to be unbalanced. For example in fraud detection, we will probably see a lot of non-fraud 
-            data points, and just a few actual frauds. This creates a bias in the prediction model; usually, the model tends to predict 
-            too many observations to belong to the majority class. This especially becomes a problem when the primary interest, as in 
-            fraud detection, is the minority class. What's worse is that precision or recall might still be very high, telling us that 
-            the model is fine.</p>
+        <p>In reality, our data is often going to be unbalanced. For example, in fraud detection, we will probably see a lot of 
+            non-fraud data points and just a few actual frauds. This creates a bias in the prediction model; usually, the model tends 
+            to predict too many observations to belong to the majority class. This especially becomes a problem when the primary 
+            interest, as in fraud detection, is the minority class. What's worse, precision or recall might still be very high, telling 
+            us that the model is fine.</p>
         <p>There are several potential solutions here. For example, we could oversample the minority class or undersample the majority 
-            class. Another option is to use the <i>F1 score</i> for evaluating the model. It is calculated from the precision and recall, but 
-            kind of balances them out to a more suitable metric. </p>
+            class. Another option is to use the <i>F1 score</i> for evaluating the model. It is calculated from the precision and recall but 
+            kind of balances them out to a more suitable metric.</p>
         <h5>How big the model?</h5>
-        <p>Including more predictors might increase our model's accuracy, but only to a certain degree. A too complex model will 
-            actually overfit the data.  This means that our model in practice loses its ability to generalize. Thus, it will perform 
-            poorly when fed with new data. This is commonly called the <i>bias-variance trade-off</i>.</p>
+        <p>Including more predictors might increase our model's accuracy, but only to a certain degree. A too complex model will overfit 
+            the data. In practice, this means that our model loses its ability to generalize. Thus, it will perform poorly when fed with 
+            new data. This is commonly called the <i>bias-variance trade-off</i>.</p>
         <h5>Avoid overfitting in supervised learning</h5>
-        <p>To avoid overfitting, we can use a <i>training</i> and a <i>testing dataset</i>. The training data is used to train the model, in other 
+        <p>To avoid overfitting, we can use a training and a testing dataset. The training data is used to train the model. In other 
             words, we use it when we do the estimation calculations. However, when we evaluate the model, we use the testing dataset.</p>
-        <p>In case we do not have that much data, we don’t wanna split it up in two. But there are good solutions. One option is to use 
+        <p>We don't want to split the data up if we do not have that much of it. But there are reasonable solutions. One option is to use  
         <i>cross-validation</i>, where we repeatedly split the data in two. After every split, we train the model on one set, and evaluate 
             it using the other.</p>
-        <p>If this is too time consuming for us, we could use some information criteria instead.  For example, we could use the <i>Aikaike 
-            Information Criterion</i>, to inform us on the best model among some alternatives. By using this criterion, we can use our 
-            whole dataset for training. In the same vein of thinking, we could use some so-called <i>shrinkage methods</i>, where we build a 
-            model that penalizes too much complexity.</p>
+        <p>If this is too time-consuming for us, we could use some information criteria instead. For example, we could use the 
+            <i>Akaike Information Criterion</i> to inform us on the best model among some alternatives. By using this criterion, we can use 
+            our whole dataset for training. In the same vein of thinking, we could use some so-called shrinkage methods, where we 
+            build a model that penalizes too much complexity.</p>
         <br>
-        <a href="case.html"><img class="growS" style="float: left;" height=24px src="icons/back3.png"></a>
-   </main>
+        <a href="case.html"><img class="growS icons" style="float: left;" height=24px src="icons/back3.png"></a>
+    </main>
     <footer>
         <a href="https://www.linkedin.com/in/emma-gunnarsson-91b57a131/" target="_blank" rel="noopener noreferrer"> <img class="HeaderImage2 footerDiv" src="icons/linkedin1.png" alt="Logotype"></a>
         <a href="https://public.tableau.com/app/profile/emma1068" target="_blank" rel="noopener noreferrer"> <img class="HeaderImage2 footerDiv" src="icons/tableau1.png" alt="Logotype"></a>

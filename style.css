@@ -7,10 +7,17 @@
     line-height: 1.6em;
     color: rgb(81, 92, 103);
 }
+
+@font-face { 
+    font-family: PublicSans; src: url('PublicSans-SemiBold.otf'); 
+} 
+@font-face { 
+    font-family: PublicSans; font-weight: bold; src: url('PublicSans-SemiBold.otf');
+}
 .bigger { 
     font-size:115%; 
 }
-.cvsmall{
+.smaller{
     font-size:80%; 
 }
 body {
@@ -20,23 +27,25 @@ body {
     color: darkgrey;
     font-size: calc(0.7em + 0.7vw);
 }
-
 .responsiveIMG {
     width: 100%;
     height: auto;
   }
-
 .responsiveIMG_max_width {
     width: 100%;
     height: auto;
     max-width: 90%;
 }
-
-@font-face { 
-    font-family: PublicSans; src: url('PublicSans-SemiBold.otf'); 
-} 
-@font-face { 
-    font-family: PublicSans; font-weight: bold; src: url('PublicSans-SemiBold.otf');
+.responsiveIMG_small {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+}
+.icons{
+    width: 3.5%;
+    height: auto;
+    max-width: 50px;
+    min-width: 20px;
 }
 
 a:link {
@@ -58,7 +67,6 @@ a:link.pages {
     text-decoration: none;
 }
 
-
 header{
     width: 100%;
     background-color: #93B8A0;
@@ -66,10 +74,7 @@ header{
     padding-bottom: 1%;
     overflow: hidden;
 }
-.aboutSection{
-    display: block;
-    width: 65%;
-}
+
 h1{
     text-align: left;
     color: black;
@@ -104,20 +109,12 @@ nav{
 
 }
 
-p.narrow {
-    max-width: 1000px;
-  }
-
 .button{
-    width: 20%;
-    margin-bottom: 1.5%
-}
-.button2{
-    display: inline;
-    margin-left: 80%; 
+    width: 30%;
     margin-bottom: 1.5%;
-    width: 20%;
+    margin-left: 30%; 
 }
+
 .readBtn{
     width: 20%;
 }
@@ -280,8 +277,6 @@ p.narrow {
 }
 
 
-
-
 .logotype{
     background-color: #93B8A0;
     width: 25%;
@@ -326,7 +321,6 @@ p.narrow {
 
 }
 
-
 .padding {
 padding: 5px 0px 5px 57px;
 }
@@ -335,9 +329,6 @@ padding: 5px 0px 5px 57px;
 }
 .paddingLeft {
     padding: 0px 25px 0px 0px;
-}
-.icons{
-    width: 10%;
 }
 
 ul {
@@ -369,10 +360,10 @@ footer{
 }
 main{
     background-color: #f8fcf4;
-    width: 50%;
+    width: 65%;
     margin-top: 5%;
     margin-bottom: 10%;
-    max-width:  1050px
+    max-width:  1000px
 
 } 
 
