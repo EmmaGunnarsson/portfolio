@@ -80,6 +80,10 @@ header{
     overflow: hidden;
 }
 
+.inline{
+    display: inline;
+  }
+
 h1{
     text-align: left;
     color: black;
