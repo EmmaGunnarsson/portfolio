@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="E>mma and Thea Gunnarsson">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Emma Gunnarsson</title>
+</head>
+
+<body>
+    <header>
+        <!--#93B8A0 #528765-->
+        <a href="index.html"> <img class="HeaderImage2" src="images/initialer_lager_alpha.png" alt="Logotype"></a>
+        <img src="images/emma_gunnarsson_v3.png" class="HeaderImage1" alt="Emma Gunnarsson">
+    </header>
+    <nav>
+        <ul id= "menu">
+            <li><a href="case.html">Case Philosophy</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="Cv.html">CV</a></li>
+            <li><a href="work.html">Work Samples</a></li>
+        </ul>
+    </nav>
+    <main>
+        <a href="projects.html"><img class="growS icons" style="float: left;" src="icons/back3.png"></a>
+        <br>
+        <h1>Predicting Loan Payback</h1>
+        <p>When lending money, we surely would like to know if the borrower is plausible to pay us back. In our data, almost 20 percent 
+            of the loans get charged off, making this question highly relevant. Using machine learning, we could feed in the 
+            characteristics of the potential borrower and the requested loan into a model and get a first assessment of the loan payback 
+            of that specific person.
+        </p>
+        <div class="btnSection">
+            <div, class="container_textbox">
+                <p style="float: right;"><img class="paddingRight responsiveIMG" src="images/pics_project_1/Loan_status.png"></p>
+                <p><strong>Most of the clients in our data do fully pay off their loans: around 20 percent of them got charged off.</strong></p>                  
+            </div>
+        </div>
+       <br>
+        <p>Using data from All Lending Club, provided on Kaggle, I tried out a Random Forest (RC) algorithm and an Artificial Neural 
+            Network (ANN) to build such a prediction model. LendingClub is the world's biggest peer-to-peer lending platform, 
+            headquartered in California, The US.
+        </p>
+        <p>The models include several characteristics of some borrowers, their loans, and whether they are paid back or not. The 
+            features include, for example, the person's grades in school, where they live (zip-codes), and if they own or rent their 
+            apartment. Also, we got data on the characteristics of the loan, such as purpose, amount, interest rate, and installments.
+        </p>
+        <h2>Results</h2>
+        <p>The models perform pretty equally. Below you see the predictions from the test dataset. Where the ANN model predicts a 
+            client getting charged off, it seems like it is wrong more frequently. However, it is pretty hard to see any apparent 
+            differences.
+        </p>  
+        <div class="btnSection">
+                <div style="float: right;"><img   class="responsiveIMG"   src="images/pics_project_1/result_RC.png"></div>
+                <div style="float: left;"><img  class="responsiveIMG"    src="images/pics_project_1/result_ANN.png"></div>
+        </div>
+        <p>Which model is best depends on our view on risk when lending money. For risk-averse, predicting fully paid when the true 
+            value really is charged off is a severe mistake. On the other hand, predicting a charge-off when the true value really is 
+            fully paid isn't as bad. Here, the ANN model seems to be preferable. However, some lenders might be more prone to risk since 
+            it might improve the returns. Then, the risk of lost opportunities might be the most troubling. In that case, perhaps we 
+            should use the RF model to guide our decisions instead.
+        </p>
+        <div class="btnSection_margin"><p style="float: center;"><img   class="responsiveIMG_max_width"    src="images/pics_project_1/classification_matrix1.png"></p></div>
+        <p><strong>Among the clients who got charged off, we misclassified 8 636 in the RF model. Among the ones who fully paid off their loans, we misclassified 218.</strong></p>
+        
+        <div class="btnSection_margin"><p style="float: center;"><img  class="responsiveIMG_max_width"  src="images/pics_project_1/classification_matrix2.png"></p> </div>
+        <p><strong>The ANN model correctly classifies more charged offs. However, it also misclassifies quite a lot more clients who fully paid off their loan.</strong></p>
+        <br>
+        <p>Out of all clients the RC model predicted would be charged off, 97 percent actually were. The ANN model performed slightly 
+            worse, with 91 percent. So it seems like using the ANN model could result in some lost lending opportunities.
+        </p>
+        <p>We can also look at it the other way around. Out of all the clients who got charged off, the RC model predicted charge off 
+            for 45 percent of them. The ANN model performed a bit better with 48 percent. Again, this shows that the ANN model could be 
+            preferable for the risk averse.
+        </p>
+        <div class="btnSection_margin">
+            <div class="container_textbox">      
+                <p style="float: center;"><img   class="responsiveIMG_max_width" src="images/pics_project_1/F1_score.png"></p>
+                <p><strong>According to the F1 score, the ANN model performs better.</strong></p>
+            </div>
+        </div>  
+        <br>
+        <p>Actually, our data is imbalanced since we got a lot fewer charged-offs than fully paid loans. When this is the case, 
+            the best metric for evaluation is the F1 score. The closer the metric is to one, the better the model performs. In our 
+            case, the F1 score is the same for Fully paid and higher for charge-offs in the ANN model. Thus, according to the F1 score, 
+            the ANN model performs better.
+        </p>
+        <h2>Data Processing</h2>
+        <p>Below you see all variables available to us. A few of them are not included in the final models for various reasons. 
+            The month at which the loan is funded is some information we will not have when considering lending money to a potential 
+            client. Therefore, including it would introduce data leakage to our model. The other variables are excluded due to missing 
+            values or because it would become too complicated to include them in the models.
+        </p>
+        <img class="responsiveIMG_max_width" src="images/pics_project_1/Variables_tables.png">
+        <br>
+        <br>
+        <h2>Missing values</h2>
+        <p>Employment title, length, revolving line utilization rate, and the number of mortgage accounts got some missing data. 
+            The utilization rate and the number of bankruptcies have only a few missing values; combined, less than 0.5% of the data. 
+            These observations are dropped.
+        </p>
+        <div class="btnSection_margin"><img class="responsiveIMG_max_width"   src="images/pics_project_1/missing_values.png"></div>
+        <br>
+        <p>Employment title has almost 6 percent missing values. The variable consists of more than 170 000 unique job titles, which 
+            is too many to simply include in our model. We could try to classify the job titles into broader categories, but that 
+            would be too time-consuming. It would also need a lot of domain knowledge to correctly classify all those titles. 
+            Therefore, the variable is just dropped.
+        </p>
+        <div class="btnSection_margin"><img class="responsiveIMG_max_width"   src="images/pics_project_1/employment_lenght.png"></div>
+        <p>Employment length has some missing values as well, and we would lose too much information by dropping them. However, this 
+            variable does not vary that much over loan status. This you see above. The variable does not have that much 
+            predictive power for loan status. Thus, this variable is dropped as well.
+        </p>
+        <div class="btnSection_margin"><img class="responsiveIMG_max_width" src="images/pics_project_1/mortage_accounts.png"></div>
+        <p>Mortgage accounts are missing almost 10 percent of the data. Also, the share of charged-off loans varies considerably for 
+            different numbers of mortgage accounts. This means that this variable does have some predictive power on loan status. 
+            To keep the variable, we could drop the missing observations. However, dropping as much as 10 percent of our data is a 
+            bad idea. Therefore, we are going to try a simple imputation method instead. We will impute the missing values based on 
+            another variable that linearly correlates with mortgage accounts.
+        </p>
+        <div class="btnSection_margin"><img class="responsiveIMG_max_width"  src="images/pics_project_1/correlation_mortage_accounts.png"></div>
+        <p>It seems like total accounts correlate most strongly with mortgage accounts. This makes sense since mortgage accounts should 
+            be a component of a client's total accounts. Therefore, the missing values of mortgage accounts are imputed with the average 
+            number of mortgage accounts for different numbers of total accounts.
+        </p>
+        <h2>Some Descriptive Statistics</h2>
+        <p>Below, you see graphs on the percentage of loans charged off over a few of the included variables. Since the percent 
+            charge-offs vary over different values of the variables, these variables are all probably improving a prediction model 
+            by being included.
+        </p>
+        <div class="btnSection_margin"><img   class="responsiveIMG_max_width"  src="images/pics_project_1/home_ownership.png"></div>
+        <p>More than 20 percent of the loans were charged off among customers who rent their homes. The category other includes "any," 
+            "none," and "other." This category consists of only a tiny part of the data, not even one percent.
+        </p>
+        <div class="btnSection_margin"><img  class="responsiveIMG_max_width"  src="images/pics_project_1/purpose.png"></div>
+        <p>Around 30 percent of the loans for small businesses got charged off in our data, while that happened only for about 12 
+            percent of the wedding loans. About 20 percent of loans for debt consolidation got charged off, which is relatively high. 
+            Especially considering this loan purpose consists of 60 percent of all loans. The second largest group is loans for credit 
+            cards, which constitutes 20 percent of the data.
+        </p>
+        <p>The loan grade is assigned by Lending Club, and although we don't really know what they base the grade on, the variable 
+            seems helpful. The clients with grades A rarely get their loans charged off, while as much as half of the G grades do so. 
+            Also, there is considerable variation in charge-offs over different loan application types.
+        </p>
+        <div class="btnSection">
+            <p style="float: right;"><img class="responsiveIMG"   src="images/pics_project_1/loan_grade.png"></p>
+            <p style="float: left;"><img  class="responsiveIMG"   src="images/pics_project_1/application_type.png"></p>
+        </div>
+        <p>Below, you see a scatter plot of Interest rate and the number of total accounts, as well as the distribution of the 
+            requested loan amount. Here, it becomes visible that the higher the interest rate, the more loans tend to get charged off.
+        </p>
+        <div class="btnSection">
+            <p style="float: left;"><img   class="responsiveIMG" src="images/pics_project_1/totalAccounts_InterestRate.png"></p>
+            <p style="float: right;"><img  class="responsiveIMG" src="images/pics_project_1/loan_amount.png"></p>
+        </div>
+        <p>The pattern for total accounts is a bit more unclear. Moreover, the distribution over loan amounts shows that most loans 
+            are around 10 000 dollars. However, the higher the loan, the higher share seems to get charged off.
+        </p>
+        <br>
+        <br>
+        <br>
+        <h2>Method</h2>
+        <p>We use only 30 percent of the sample for training. The remaining 70 percent is used to evaluate the model.</p>
+        <p>The RC model is set to build 500 decision trees. A higher number of trees generally increases the performance and makes 
+            the predictions more stable.
+        </p>
+        <p>My ANN model is a five-layer perceptron model with dense layers and backpropagation. To further avoid overfitting, I use 
+            dropout layers, where a share of a layer's neurons is randomly turned off for each propagation.
+        </p>
+        <p>In this ANN model, I use a binary cross-entropy loss function. A loss function quantifies how good or bad the model is at 
+            classifying the inputs. The smaller the loss, the better the classifier models the relationship. However, there is a point 
+            where we will overfit our model. Therefore, we need to keep track of our validation loss rather than the training loss. The 
+            validation loss is computed off the testing data, while the training loss is calculated off the training data. Below, you 
+            will find these plotted over the epochs of the model. I used a higher number of epochs, but the algorithm stopped training 
+            around the 50th epoch due to early stopping.
+        </p>
+        <div class="btnSection_margin"><img class="responsiveIMG"   src="images/pics_project_1/validation.png"></div>
+        <p>Standardizing the inputs is not strictly necessary using this ANN model, but it can make training faster and reduce the 
+            chances of getting stuck in local optima. Therefore, I do standardization of the inputs. The scaler is fit on the training 
+            data and then used to transform the training and testing data. For simplicity, I also use scaled data for the RC model, 
+            although it is not strictly necessary for this model. Because of this, if the trained models are fed with any new data, 
+            that data must first be standardized.
+        </p>
+        <br>   
+        <a href="projects.html"><img class="growS icons" style="float: left;" src="icons/back3.png"></a>
+    </main>
+    <footer>
+        <a href="https://www.linkedin.com/in/emma-gunnarsson-91b57a131/" target="_blank" rel="noopener noreferrer"> <img class="HeaderImage2 footerDiv" src="icons/linkedin1.png" alt="Logotype"></a>
+        <a href="https://public.tableau.com/app/profile/emma1068" target="_blank" rel="noopener noreferrer"> <img class="HeaderImage2 footerDiv" src="icons/tableau1.png" alt="Logotype"></a>
+        <a href="https://github.com/EmmaGunnarsson" target="_blank" rel="noopener noreferrer"> <img class="HeaderImage2 footerDiv" src="icons/github5.png" alt="Logotype"></a>
+    </footer>
+</body>
+</html>

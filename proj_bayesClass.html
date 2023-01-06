@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Emma and Thea Gunnarsson">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Emma Gunnarsson</title>
+</head>
+
+<body>
+    <header>
+        <!--#93B8A0 #528765-->
+        <a href="index.html"> <img class="HeaderImage2" src="images/initialer_lager_alpha.png" alt="Logotype"></a>
+        <img src="images/emma_gunnarsson_v3.png" class="HeaderImage1" alt="Emma Gunnarsson">
+    </header>
+    <nav>
+        <ul id= "menu">
+            <li><a href="case.html">Case Philosophy</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="Cv.html">CV</a></li>
+            <li><a href="work.html">Work Samples</a></li>
+        </ul>
+    </nav>
+    <main>
+        <a href="projects.html"><img class="growS icons" style="float: left;" src="icons/back3.png"></a>
+        <br>
+        <h1>Theory: Naïve Bayes Classifier</h1>
+
+        <p> Naive Bayes classifiers are a group of classification algorithms dependent on Bayes’ Theorem. They are fast, easy to implement and often reliable. Consequently, they are used in a variety of classification tasks, such as in NLP, recommendation systems and predicting various health outcomes.</p>
+        <p>Baye’s Theorem calculates the probability of an event, given that some other event has already occurred. The formula is as follows:</p>
+        P(y|X) = 
+        <div class="frac">
+            <span>P(X|y) &#215; P(y) </span>
+            <span class="symbol">/</span>
+            <span class="bottom">P(X)</span>  
+        </div>
+        
+        <p>We are calculating the probability of y occurring, given that X has already occurred. So, y is the class we are trying to predict, and X represents all the n features:</p>
+        <p>X = (x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>)</p>
+
+        <p>In our case, we are predicting the probability of a firm going bankrupt, given some firm characteristics, such as profits, return on assets, revenues, costs etcetera. In the formula above, by substituting for X and expanding the expression using the chain rule, we get:</p>
+        P(y|X) = 
+        <div class="frac">
+            <span>P(x<sub>1</sub>|y) &#215; P(x<sub>2</sub>|y) &#215; ... &#215; P(x<sub>n</sub>|y) &#215; P(y) </span>
+            <span class="symbol">/</span>
+            <span class="bottom">P(x<sub>1</sub>) &#215; P(x<sub>2</sub>) &#215; ... &#215; P(x<sub>n</sub>)</span>  
+        </div>
+
+        <p>The denominator is constant for all entries in our dataset. Therefore, we can think of P(y|X) as being proportional to the numerator:</p>
+        <p>P(y|x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>) &#8733;  P(x<sub>1</sub>|y) &#215; P(x<sub>2</sub>|y) &#215; ... &#215; P(x<sub>n</sub>|y) &#215; P(y)</p>        
+        <p>P(y|x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>) &#8733;  P(y) &#215; &#8719;P(x<sub>i</sub>|y)</p>
+        <p>Bayes Naïve classifiers need two assumptions to be fulfilled. First, the features should be independent. This implies for example that a firm’s level of profits should not affect revenues etcetera. Secondly, each feature should have an equal impact on the outcome. These assumptions do generally not hold in real life applications. It could hamper the performance of the classifier, hence, the name naïve.</p>
+        <p>For the sake of clarity, I present two example features below; the current ratio and the cash flow to debt ratio. For simplicity, I illustrate the calculations by only looking at “high” and “low” values, although these measures are usually continuous. Notably, Bayes classifier can also handle continuous variables, although I do not show it here. </p>
+        <p>The current ratio, which divides current assets by current liabilities, is one of the primary liquidity ratios used for evaluating a company's financial soundness. It evaluates a company's capability of handling all its short-term debt obligations, by measuring the adequacy of the company's current resources to cover all of its debt obligations for the next 12 months. A higher current ratio indicates that the company has more liquidity. The cash flow to debt ratio is calculated as cash flow from operations divided by total debt. It is sometimes considered the single best predictor of financial business failure. A higher ratio indicates a company more soundly capable of covering its debt. </p>
+        <p style="float: right;"><img class="paddingRight responsiveIMG" src="images/pics_project_2/freq_prob_x1_table.png"></p>
+
+        <p>The frequency table shows the frequencies of each instance in our data. Thus, that is the data on which we are basing our prediction model. In machine learning terms, this is our training data. Below that, in the probability section, I have calculated the conditioned probabilities of high and low current ratios. For example, the first cell in the probability section contains the probability of having a high current ratio, given that the firm has gone bankrupt. In formula terms:</p>
+        <p>P(x<sub>1</sub>│y) = P(Cash Ratio = High│Bankrupt) = 0.23</p>
+        <p>Moreover, the probability of a high cash ratio given no bankruptcy is given by:</p>
+        <p>P(x<sub>1</sub>│y) = P(Cash Ratio = High│Not Bankrupt) = 0.84</p>
+        <p>The same reasoning goes for the conditional probability of low current ratio.</p>
+        <p>We can make the same table for our second feature, cash flow to debt ratio:	</p>
+        
+        <p style="float: right;"><img class="paddingRight responsiveIMG" src="images/pics_project_2/freq_prob_x2_table.png"></p>
+
+        <p>Although the method allows for multivariate cases, our class variable only has two outcomes; bankrupt or not bankrupt.  Moreover, we also know the probability of going bankrupt from this data:</p>
+        P(y) = P(Bankruptcy) = 
+        <div class="frac">
+            <span>130</span>
+            <span class="symbol">/</span>
+            <span class="bottom">130 + 285</span>  
+        </div>
+        = 0.31
+        <p>As well as the probability of not going bankrupt:</p>
+        P(y) = P(No Bankruptcy) = 
+        <div class="frac">
+            <span>285</span>
+            <span class="symbol">/</span>
+            <span class="bottom">130 + 285</span>  
+        </div>
+        = 0.69
+        <p>Let’s say in new data, we know the current ratio and the cash flow debt ratio, but we do not yet know whether the firm is going to go bankrupt. Thus, we would like to predict bankruptcy, given a certain current ratio and a certain cash flow debt ratio. Below, you find some example data containing information on current ratio and cash flow to debt ratio, but no information on bankruptcies. 
+            Using the Bayes classifier formula, we calculate P(y) &#215; P(x<sub>1</sub>|y) &#215; P(x<sub>2</sub>|y)  for each individual: 
+        </p>
+        <p style="float: right;"><img class="paddingRight responsiveIMG" src="images/pics_project_2/data_prob_table.png"></p>
+
+       <p>The class with the highest estimated probability for a particular individual becomes our prediction.  Formally, we have:</p>
+       <span style="position: relative; left: 12px; bottom: 8px;">^</span>y = argmax<sub>y</sub>P(y) &#215; &#8719;P(x<sub>i</sub>|y)
+       <p>In terms of predictions, it translates to:</p>
+       
+       <p style="float: right;"><img class="paddingRight responsiveIMG" src="images/pics_project_2/data_prob_pred_table.png"></p>
+
+       <p>Thus, we predict firm 1 to go bankrupt, and the rest of the firms to not go bankrupt.</p>
+
+    </main>
+    <footer>
+        <a href="https://www.linkedin.com/in/emma-gunnarsson-91b57a131/" target="_blank" rel="noopener noreferrer"> <img class="HeaderImage2 footerDiv" src="icons/linkedin1.png" alt="Logotype"></a>
+        <a href="https://public.tableau.com/app/profile/emma1068" target="_blank" rel="noopener noreferrer"> <img class="HeaderImage2 footerDiv" src="icons/tableau1.png" alt="Logotype"></a>
+        <a href="https://github.com/EmmaGunnarsson" target="_blank" rel="noopener noreferrer"> <img class="HeaderImage2 footerDiv" src="icons/github5.png" alt="Logotype"></a>
+    </footer>
+</body>
+</html>
